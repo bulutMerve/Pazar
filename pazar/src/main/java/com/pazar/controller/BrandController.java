@@ -1,10 +1,14 @@
 package com.pazar.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.pazar.model.Brand;
 import com.pazar.service.BrandService;
@@ -20,13 +24,20 @@ public class BrandController {
 	}
 
 	@GetMapping("/savebrand")
-	public String saveBrand(@ModelAttribute("brandVM") Brand brand) {
+	public String createBrand(@ModelAttribute("brandVM") Brand brand) {
 		return "brand/create";
 	}
 
 	  @PostMapping("/savebrand")
-	    public String savebrand(Brand brand) {
+	    public String saveBrand(Brand brand) {
 		  brandService.SaveBrand(brand);
-	        return "redirect:/brand/list";
+	        return "redirect:/brandlist";
+	    }
+	  
+	  @RequestMapping("/brandlist")
+	    public String brandList(Model model) {
+	        List<Brand> brandList = brandService.listBrand();
+	        model.addAttribute("brandListVM", brandList);
+	        return "brand/list";
 	    }
 }

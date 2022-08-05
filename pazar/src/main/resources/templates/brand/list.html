@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  
+    <meta charset="utf-8"/>
+    <title>Marka Listesi</title>
+</head>
+<body>
+
+<div>
+    <table >
+        <thead>
+        <tr>
+            <th scope="col">Adı</th>
+             <th>
+                <div>
+                </div>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="brand:${brandListVM}">
+            <td th:text="${brand.brandName}">Adı</td>
+            <th>
+                <div>
+                
+                </div>
+            </th>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
