@@ -12,6 +12,8 @@
     <table >
         <thead>
         <tr>
+            <th scope="col">Id</th>
+           
             <th scope="col">Adı</th>
              <th>
                Düzenle
@@ -20,10 +22,15 @@
         </thead>
         <tbody>
         <tr th:each="brand:${brandListVM}">
+            <td th:text="${brand.brandId}">Adı</td>
             <td th:text="${brand.brandName}">Adı</td>
               <th>
                     <a class="btn btn-secondary" th:href="@{'/updatebrand/' + ${brand.brandId}}">Düzenle</a>
+                    
             </th>
+             <th>
+             <a class="btn btn-danger" th:href="@{'/deletebrand/' + ${brand.brandId}}">Sil</a>
+             </th>
         </tr>
         </tbody>
     </table>

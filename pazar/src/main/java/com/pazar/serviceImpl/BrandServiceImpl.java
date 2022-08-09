@@ -28,13 +28,15 @@ public class BrandServiceImpl implements BrandService{
 	@Override
 	public void deleteBrand(int id) {
 		brandRepository.deleteById(id);
-		
 	}
 
 	@Override
 	public Brand getBrand(int id) {
-		return brandRepository.findById(id).get();
+		// TODO Auto-generated method stub
+		return null;
 	}
+
+
 	
 
 }

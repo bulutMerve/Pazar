@@ -49,4 +49,9 @@ public class BrandController {
 	        return "brand/update";
 	    }
 
+	  @GetMapping("/deletebrand/{id}")
+	    public String deleteBrand(@PathVariable("id") int id) {
+		  brandService.deleteBrand(id);
+	        return "redirect:/brandlist";
+	    }
 }
