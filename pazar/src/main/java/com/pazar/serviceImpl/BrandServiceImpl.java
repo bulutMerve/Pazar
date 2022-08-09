@@ -32,8 +32,7 @@ public class BrandServiceImpl implements BrandService{
 
 	@Override
 	public Brand getBrand(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return brandRepository.findById(id).get();
 	}
 
 
