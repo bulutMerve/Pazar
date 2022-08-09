@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -40,4 +41,12 @@ public class BrandController {
 	        model.addAttribute("brandListVM", brandList);
 	        return "brand/list";
 	    }
+	  
+	  @GetMapping("/updatebrand/{id}")
+	    public String updateBrand(@PathVariable("id") int id, Model model) {
+		  Brand brand = brandService.getBrand(id);
+	        model.addAttribute("brandVM", brand);
+	        return "brand/update";
+	    }
+
 }

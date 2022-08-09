@@ -14,18 +14,15 @@
         <tr>
             <th scope="col">Adı</th>
              <th>
-                <div>
-                </div>
+               Düzenle
             </th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="brand:${brandListVM}">
             <td th:text="${brand.brandName}">Adı</td>
-            <th>
-                <div>
-                
-                </div>
+              <th>
+                    <a class="btn btn-secondary" th:href="@{'/updatebrand/' + ${brand.brandId}}">Düzenle</a>
             </th>
         </tr>
         </tbody>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    
+</head>
+<body>
+<div align="center">
+    <div align="center">
+        <form action="#" th:action="@{/savebrand}" th:object="${brandVM}" method="post">
+            <div class="text-center">
+                <table >
+                    <thead>
+                    <tr>
+                        <td>Brand Name:</td>
+                        <td>   <input type="hidden" th:field="*{brandId}" readonly/>
+                        <input type="text" required th:field="*{brandName}"/></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button type="submit" class="btn btn-primary">Kaydet</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

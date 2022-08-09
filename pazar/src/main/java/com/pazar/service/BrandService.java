@@ -7,4 +7,5 @@ public interface BrandService {
 	Brand SaveBrand (Brand brand);
 	List<Brand> listBrand();
 	void deleteBrand(int id);
+	Brand getBrand(int id);
 }
