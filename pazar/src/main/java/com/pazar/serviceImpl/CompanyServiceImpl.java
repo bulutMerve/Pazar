@@ -3,11 +3,13 @@ package com.pazar.serviceImpl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.pazar.model.Company;
 import com.pazar.repository.CompanyRepository;
 import com.pazar.service.CompanyService;
 
+@Service
 public class CompanyServiceImpl implements CompanyService {
 
 	@Autowired
