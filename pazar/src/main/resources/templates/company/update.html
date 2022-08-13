@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+	crossorigin="anonymous">
+
+</head>
+<body>
+	<div align="center">
+		<div align="center">
+			<form action="#" th:action="@{/savecompany}" th:object="${companyVM}"
+				method="post">
+			
+
+
+				<div class="card-body">
+					<form action="#" th:action="@{/savecompany}" th:object="${companyVM}"
+						class="form" method="post">
+						<div class="form-group">
+							<label for="exampleInputEmail1" class="form-label">Company
+								Name</label>
+							<div class="col-lg-6 col-md-9 col-sm-12">
+								<input type="hidden" th:field="*{companyId}" readonly /> <input
+									type="text" required th:field="*{companyName}" />
+							</div>
+							
+								<label for="exampleInputEmail1" class="form-label">Company Address </label>
+							<div class="col-lg-6 col-md-9 col-sm-12">
+								<input type="hidden" th:field="*{companyId}" readonly /> <input
+									type="text" required th:field="*{companyAddress}" />
+							</div>
+							
+								<label for="exampleInputEmail1" class="form-label">Company Number </label>
+							<div class="col-lg-6 col-md-9 col-sm-12">
+								<input type="hidden" th:field="*{companyId}" readonly /> <input
+									type="text" required th:field="*{companyPhoneNumber}" />
+							</div>
+							
+								<label for="exampleInputEmail1" class="form-label">Tax Number</label>
+							<div class="col-lg-6 col-md-9 col-sm-12">
+								<input type="hidden" th:field="*{companyId}" readonly /> <input
+									type="text" required th:field="*{taxNumber}" />
+							</div>
+							
+						</div>
+						<div class="form-group">
+							<div class="col-lg-6 col-md-9 col-sm-12">
+								<button type="submit" class="btn btn-success">Kaydet</button>
+							</div>
+						</div>
+					</form>
+				</div>
+
+
+			</form>
+		</div>
+	</div>
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+		crossorigin="anonymous"></script>
+
+</body>
+</html>
