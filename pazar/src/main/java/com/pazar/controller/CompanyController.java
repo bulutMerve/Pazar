@@ -48,4 +48,10 @@ public class CompanyController {
 		model.addAttribute("companyVM",company);
 		return "company/update";
 	}
+	
+	@GetMapping("/deletecompany/{id}")
+	public String deleteCompany(@PathVariable("id")int id) {
+		companyService.deleteCompany(id);
+		return "redirect:/companylist";
+		}
 }
