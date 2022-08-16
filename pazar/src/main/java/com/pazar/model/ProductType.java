@@ -17,13 +17,11 @@ import lombok.NoArgsConstructor;
 public class ProductType {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(nullable=false)
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(nullable = false)
 	private int productTypeId;
-	
-	@Column(nullable=false)
+
+	@Column(nullable = false)
 	private String productTypeName;
-	
-	
-	
+
 }
